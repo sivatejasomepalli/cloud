@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Title</title>
+</head>
+<body data-ng-app="app" ng-controller="MainCtrl" background="water-service.jpg">
+<div class="container-fluid text-center">
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="col-md-4">
+            <h4>Kansas City</h4>
+            <table class="table table-primary table-bordered text-center text-lg-center">
+                <thead>
+                <tr class="text-center">
+                    <th bgcolor="aqua">year</th>
+                    <th bgcolor="aqua"> No. of requests</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in kcvalue">
+                    <td bgcolor="#fff8dc">{{x.creation_year}}</td>
+                    <td bgcolor="#fff8dc">{{x.count_case_id}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h4>NewYork City</h4>
+            <table class="table table-primary table-bordered text-center">
+                <thead>
+                <tr class="text-center">
+                    <th bgcolor="aqua">year</th>
+                    <th bgcolor="aqua"> No. of requests</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="x in nycvalue">
+                    <td bgcolor="#fff8dc">{{x.date_extract_y_created_date}}</td>
+                    <td bgcolor="#fff8dc">{{x.count_unique_key}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container-fluid text-center">
+        <div></div>
+        <div id="curve_chart" style="width: 900px; height: 500px;margin-left: 25%"></div>
+    </div>
+</div>
+
+
+<script src="app.js"> </script>
+</body>
+</html>
